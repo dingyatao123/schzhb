@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{padding:0;margin:0;color:#333;background:#fff;font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;box-sizing:border-box;}
+a,area{blr:expression(this.onFocus=this.blur())}
+/* for IE */
+:focus{-moz-outline-style:none;}
+/* for Firefox */
+a{text-decoration:none;color:#000;outline:none;}
+a:hover{color:#cb370f;text-decoration:none;outline:none;}
+a img{border:none;}
+table tr td{font-size:14px;}
+font{ font-size:14px;}
+ul{list-style:none;}
+a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
+.length{word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.box{display:-moz-inline-stack; display:inline-block; *display:inline; *zoom:1;}
+/* Wrapper */
+.font{font-family:"宋体";}
+
+/*公用*/
+#header,#nav,#banner,#mian,#scape,#link,#footer_box,#footer{width:100%;min-width:1003px;margin:0 auto;}
+#header_main,#nav_main,#banner_main,#main_con,#scape_main,#link_main,#footer_box_main,#footer_main,#hb{width:1003px;margin:0 auto;}
+.container{ width:1003px;margin:0 auto; text-align:left; padding:0;}
+.logo{ float:left;}
+.clear{clear:both;display:table;content:"";}
+
+/*index页面*/
+/*header*/
+#header{height:41px;background:url(../images/header_bg.png) no-repeat center;min-width:1003px;}
+#header_main{height:41px;line-height:41px;}
+.header_date{float:left;height:41px;line-height:41px;}
+.header_contact{float:right;height:41px;line-height:41px;}
+.header_contact ul{height:41px;line-height:41px;}
+.header_contact ul li{float:left;height:41px;line-height:41px;}
+.header_contact ul li a{display:inline-block;padding-left:25px;text-align:right;margin-right:20px;background:url(../images/email.jpg) no-repeat left;}
+.header_contact ul li a.app{background:url(../images/app.jpg) no-repeat left;}
+.header_contact ul li a.mr0{margin-right:0;}
+
+/*hheader_logo*/
+#header_logo{background:url(../images/wKiAi.jpg) no-repeat center top;height:113px;min-width:1003px;}
+
+/*nav*/
+#nav{height:40px;min-width:1003px;background:url(../images/menu_bg.png) no-repeat center; position:relative; z-index:30;margin-bottom:50px;}
+#nav_main{height:40px;}
+#nav_main ul li{float:left; position:relative;margin-left: 0;}
+#nav_main ul li a{display:inline-block;width:92px;height:40px;color: #000;line-height:35px;text-align:center;font-size:18px;font-weight:bold;margin:0 5px;text-decoration: none;}
+#nav_main ul li.current-menu-item a{background:url(../images/nav_bg.png) repeat center;color:#fff;}
+
+#nav_main ul ul{ position:absolute; display:none; left:-35px; top:40px; z-index:999; padding:0px; margin:0px; width:200px; z-index:5;}
+#nav_main ul ul li{   line-height:28px; z-index:9999; text-align:center;}
+#nav_main ul ul li a{ width:200px; line-height:28px; height:28px; color:#FFFFFF; background:#b72715; z-index:999; display:block; font-size:12px; }
+#nav_main ul ul li a:hover{ background:#FFFFFF; color:#b72715; }
+
+.wrap {position: relative;width: 1200px;height: 360px;margin: 0 auto 50px;}
+.content {position: absolute;width: 1200px;height: 360px;}
+.content li{position: absolute;background-size: 100% 100%;cursor: pointer;}
+.wrap a {position: absolute;display: none;z-index: 2;top: 50%;width: 60px;height: 60px;margin-top: -30px;font: 36px/60px "ËÎÌå";text-align: center;text-decoration: none;color: #fff;background: rgb(255, 100, 0);background: rgba(255, 100, 0, .6);transition: background 1s ease;}
+.wrap a:hover {background: rgb(255, 100, 0);}
+.prev {left: 30px;}
+.next {right: 30px;}
+
+#hb .left{width: 33.333%;box-sizing: border-box;float: left;}
+#hb .left:nth-child(2){padding: 0 10px;background: url(../images/1.png) no-repeat right top;background-size: 1px 100%;height: 225px;}
+#hb .left:nth-child(3){padding-left: 10px;}
+#hb .left h2{font-size: 1.6rem;font-weight: normal;margin: 0 0 10px;border-left: 2px solid #0268c3;padding-left: 5px;color: #333;}
+#hb .left h2 a{float: right;font-size: 1.4rem;}
+#hb .left:nth-child(2)>div{white-space: pre-line;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 8;overflow: hidden;}
+#hb .left:nth-child(2)>a{color: #0268c3;}
+.swiper1 .swiper-slide p{position: absolute;left: 0;bottom: 0;width: 100%;background: rgba(0,0,0,0.5);color: #fff;padding: 5px;}
+.swiper-container .swiper-pagination-bullet{background: #fff;opacity: 1;}
+.swiper-container .swiper-pagination-bullet-active{background: #0268c3;}
+.swiper-container .swiper-pagination{text-align: right;bottom: 7px;padding-right: 4px;}
