@@ -142,6 +142,86 @@ function twentytwenty_theme_support() {
 	$loader = new TwentyTwenty_Script_Loader();
 	add_filter( 'script_loader_tag', array( $loader, 'filter_script_loader_tag' ), 10, 2 );
 
+	function my_custom_post_touzi() {
+		$labels = array(
+			'name' => '投资促进'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'touzi', $args );
+	}
+	add_action( 'init', 'my_custom_post_touzi' );
+
+	function my_custom_post_zn() {
+		$labels = array(
+			'name' => '劳务指南'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'zn', $args );
+	}
+	add_action( 'init', 'my_custom_post_zn' );
+
+	function my_custom_post_info() {
+		$labels = array(
+			'name' => '川沪信息'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'info', $args );
+	}
+	add_action( 'init', 'my_custom_post_info' );
+
+	function my_custom_post_scfq() {
+		$labels = array(
+			'name' => '四川风情'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'scfq', $args );
+	}
+	add_action( 'init', 'my_custom_post_scfq' );
+
+	
+	function my_taxonomies_ac_co() {
+		$labels = array(
+			'name'              => '分类目录',
+			'singular_name'     => '分类目录'
+		);
+		$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+			'query_var' => true,
+			'show_admin_column' => true
+		);
+		register_taxonomy( 'category_touzi', array('touzi'), $args );
+		register_taxonomy( 'category_scfq', array('scfq'), $args );
+	}
+	add_action( 'init', 'my_taxonomies_ac_co');
 }
 
 add_action( 'after_setup_theme', 'twentytwenty_theme_support' );
@@ -845,3 +925,18 @@ class PTCFP{
   } // PTCFP
    
   $ptcfp = new PTCFP();
+
+//   //模板
+// add_action('template_include', 'load_single_template');
+// function load_single_template($template) {
+//     $new_template = '';
+// 	global $post;
+	
+// 	if($post->ID==3 || $post->ID=4) {
+// 		$new_template = locate_template(array('list.php' ));
+// 	}elseif($post->ID!=2) {
+// 		$new_template = locate_template(array('detail.php' ));
+// 	}
+
+//     return ('' != $new_template) ? $new_template : $template;
+// }

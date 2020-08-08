@@ -45,11 +45,11 @@ $thisid = $post -> ID;
 					document.write("<span style='font-size: 9pt;'>"+date+week+"</span>");
 					</script>
 				</div>
-				<div class="header_contact">
+				<!-- <div class="header_contact">
 					<ul>
 						<li><a class="email" href="<?php echo get_permalink(22); ?>">领导信箱</a></li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<a href="/"><div id="header_logo"></div></a>

@@ -12,50 +12,31 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+		<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
-				<div class="section-inner">
-
-					<div class="footer-credits">
-
-						<p class="footer-copyright">&copy;
+			
+			<div id="nav">
+				<div id="nav_main" class="clear">
+					<?php if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) { ?>
+						<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
+							<ul class="primary-menu reset-list-style">
 							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/date */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
+							if ( has_nav_menu( 'primary' ) ) {
+								wp_nav_menu(
+									array(
+										'container'  => '',
+										'items_wrap' => '%3$s',
+										'theme_location' => 'primary',
+									)
+								);
+							}
 							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+							</ul>
+						</nav><!-- .primary-menu-wrapper -->
+					<?php } ?>
+				</div>
+			</div>
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
-
-					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
-
-				</div><!-- .section-inner -->
-
-			</footer><!-- #site-footer -->
-
-		<?php wp_footer(); ?>
-
+		</footer><!-- #site-footer -->
 	</body>
 </html>

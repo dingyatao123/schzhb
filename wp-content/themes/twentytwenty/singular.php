@@ -76,11 +76,179 @@ get_header();
 			<div><?php echo get_post(1)->post_content; ?></div><a href="<?php echo get_permalink(1); ?>">[详情]</a>
 		</div>
 		<div class="left">
-
+			<h2><?php echo get_post(25)->post_title; ?> <a href="<?php echo get_permalink(25); ?>">更多>></a></h2>
+			<h3>重要政务服务</h3>
+			<ul>
+			<?php
+				$args = array(
+					'post_type' 	 => 'post',
+					'orderby'   	 => 'date',
+					'order'   	 => 'desc',
+					'posts_per_page' => 7
+				);
+				$slides = new WP_Query($args);
+				$num = $slides->post_count;//总条数
+				if($num>0){
+					while ($slides->have_posts()):$slides->the_post();  ?>
+					<li>
+						<a href="<?php echo get_the_permalink() ?>">
+							<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+						</a>
+					</li>
+				<?php endwhile;} ?>
+			</ul>
 		</div>
 		<div class="clear"></div>
 	</div>
-
+	<div id="touzi">
+		<div class="container">
+			<ul class="title">
+				<li class="active">招商引资项目</li>
+				<li>园区信息</li>
+				<li>投资政策</li>
+				<li>他山之石</li>
+				<div class="clear"></div>
+			</ul>
+			<ul class="list">
+				
+			</ul>
+			<script>
+				var touzi=[[],[],[],[]];
+				<?php
+					$arr = array('zsyz','yqxx','tzzz','tszs');
+					for($i=0;$i<3;$i++){
+					$args = array(
+						'post_type' 	 => 'touzi',
+						'orderby'   	 => 'date',
+						'order'   	 => 'desc',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'category_touzi',
+								'field' => 'slug', //can be set to ID
+								'terms' => $arr[$i],
+							)
+						), 
+						'posts_per_page' => 7
+					);
+					$slides = new WP_Query($args);
+					$num = $slides->post_count;//总条数
+						while ($slides->have_posts()):$slides->the_post();  ?>
+						touzi[<?php echo $i; ?>].push(['<?php echo $post->post_title; ?>','<?php echo get_the_date('Y-m-d'); ?>','<?php echo get_the_permalink(); ?>']);
+					<?php endwhile;} ?>
+				$(document).ready(function(){
+					touzilist(0);
+					$("#touzi .title li").click(function () {
+						$("#touzi .title li").removeClass('active');
+						$(this).addClass('active');
+						touzilist($(this).index());
+					});
+				});
+				function touzilist(cat){
+					$("#touzi .list").html('');
+					for(j = 0,len=touzi[cat].length; j < len; j++) {
+						$("#touzi .list").append('<li><a href="'+touzi[cat][j][2]+'"><span>'+touzi[cat][j][0]+'</span><span>　　　　'+touzi[cat][j][1]+'</span></a></li>');
+					}
+				}
+			</script>
+		</div>
+	</div>
+	<div id="lw">
+		<div class="left">
+			<h2><?php echo get_post(33)->post_title; ?> <a href="<?php echo get_permalink(33); ?>">更多>></a></h2>
+			<ul>
+			<?php
+				$args = array(
+					'post_type' 	 => 'zn',
+					'orderby'   	 => 'date',
+					'order'   	 => 'desc',
+					'posts_per_page' => 7
+				);
+				$slides = new WP_Query($args);
+				$num = $slides->post_count;//总条数
+				if($num>0){
+					while ($slides->have_posts()):$slides->the_post();  ?>
+					<li>
+						<a href="<?php echo get_the_permalink() ?>">
+							<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+						</a>
+					</li>
+				<?php endwhile;} ?>
+			</ul>
+		</div>
+		<div class="left">
+			<h2><?php echo get_post(27)->post_title; ?> <a href="<?php echo get_permalink(27); ?>">更多>></a></h2>
+			<ul>
+			<?php
+				$args = array(
+					'post_type' 	 => 'info',
+					'orderby'   	 => 'date',
+					'order'   	 => 'desc',
+					'posts_per_page' => 7
+				);
+				$slides = new WP_Query($args);
+				$num = $slides->post_count;//总条数
+				if($num>0){
+					while ($slides->have_posts()):$slides->the_post();  ?>
+					<li>
+						<a href="<?php echo get_the_permalink() ?>">
+							<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+						</a>
+					</li>
+				<?php endwhile;} ?>
+			</ul>
+		</div>
+		<div class="left">
+			<div class="swiper-container swiper2">
+				<div class="swiper-wrapper">
+					<?php
+						$args = array(
+							'post_type' 	 => 'page',
+							'orderby'   	 => 'menu_order',
+							'order'   	 => 'desc',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'category',
+									'field' => 'slug', //can be set to ID
+									'terms' => 'rotation3',
+								)
+							),
+							'posts_per_page' => -1
+						);
+						$slides = new WP_Query($args);
+						$num = $slides->post_count;//总条数
+						if($num>0){
+							while ($slides->have_posts()):$slides->the_post();  ?>
+							<div class="swiper-slide li li<?php echo $post->ID; ?>">
+								<img width="100%" src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt="">
+								<p><?php echo $post->post_title; ?></p>
+							</div>
+						<?php endwhile;} ?>
+				</div>
+    			<div class="swiper-pagination"></div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					var swiper = new Swiper('.swiper2', {
+						slidesPerView: 1,
+						loop: true,
+						pagination: {
+							el: '.swiper-pagination',
+						},
+						autoplay: {
+							delay: 4000,
+							disableOnInteraction: false,
+						}
+					});
+					$('.swiper2').hover(function(){
+						swiper.autoplay.stop();
+					},function(){
+						swiper.autoplay.start();
+					});
+				});
+			</script>
+		</div>
+		<div class="clear"></div>
+	</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

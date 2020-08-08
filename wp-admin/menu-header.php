@@ -161,6 +161,7 @@ function _wp_menu_output( $menu, $submenu, $submenu_as_parent = true ) {
 				$admin_is_parent = true;
 				echo "<a href='admin.php?page={$submenu_items[0][2]}'$class $aria_attributes>$arrow<div class='wp-menu-image$img_class'$img_style>$img</div><div class='wp-menu-name'>$title</div></a>";
 			} else {
+			    if($title=='文章'){$title="沪办动态";}
 				echo "\n\t<a href='{$submenu_items[0][2]}'$class $aria_attributes>$arrow<div class='wp-menu-image$img_class'$img_style>$img</div><div class='wp-menu-name'>$title</div></a>";
 			}
 		} elseif ( ! empty( $item[2] ) && current_user_can( $item[1] ) ) {
