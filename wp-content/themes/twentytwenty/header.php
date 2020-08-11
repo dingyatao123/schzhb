@@ -8,6 +8,7 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
+global $thisid;
 $thisid = $post -> ID;
 ?><!DOCTYPE html>
 
@@ -65,6 +66,7 @@ $thisid = $post -> ID;
 									'container'  => '',
 									'items_wrap' => '%3$s',
 									'theme_location' => 'primary',
+									'menu_class' => 'menuasdfasd'
 								)
 							);
 						}
@@ -74,3 +76,24 @@ $thisid = $post -> ID;
 				<?php } ?>
 			</div>
 		</div>
+<script>
+    $(document).ready(function(){ 
+        <?php if($thisid==176){?>
+            $('body>#nav .primary-menu>li:nth-child(2)').addClass('current-menu-item');
+		<?php }elseif($post->post_type=='post'){?>
+            $('body>#nav .primary-menu>li:nth-child(3)').addClass('current-menu-item');
+		<?php }elseif($post->post_type=='info'){?>
+            $('body>#nav .primary-menu>li:nth-child(4)').addClass('current-menu-item');
+		<?php }elseif(get_post($thisid)->post_type=='touzi' || has_term('tzcj', 'category_page', get_post($thisid))){?>
+            $('body>#nav .primary-menu>li:nth-child(5)').addClass('current-menu-item');
+		<?php }elseif($post->post_type=='zn'){?>
+            $('body>#nav .primary-menu>li:nth-child(6)').addClass('current-menu-item');
+		<?php }elseif($post->post_type=='window'){?>
+            $('body>#nav .primary-menu>li:nth-child(7)').addClass('current-menu-item');
+		<?php }elseif(get_post($thisid)->post_type=='sh' || has_term('scsh', 'category_page', get_post($thisid))){?>
+            $('body>#nav .primary-menu>li:nth-child(8)').addClass('current-menu-item');
+		<?php }elseif(get_post($thisid)->post_type=='scfq' || has_term('scfq', 'category_page', get_post($thisid))){?>
+            $('body>#nav .primary-menu>li:nth-child(9)').addClass('current-menu-item');
+		<?php } ?>
+    });
+</script>

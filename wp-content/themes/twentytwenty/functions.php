@@ -192,7 +192,7 @@ function twentytwenty_theme_support() {
 
 	function my_custom_post_scfq() {
 		$labels = array(
-			'name' => '四川风情'
+			'name' => '景点介绍'
 		);
 		$args = array(
 			'labels'        => $labels,
@@ -206,6 +206,38 @@ function twentytwenty_theme_support() {
 	}
 	add_action( 'init', 'my_custom_post_scfq' );
 
+	function my_custom_post_window() {
+		$labels = array(
+			'name' => '党群之窗'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'window', $args );
+	}
+	add_action( 'init', 'my_custom_post_window' );
+
+	function my_custom_post_sh() {
+		$labels = array(
+			'name' => '商会动态'
+		);
+		$args = array(
+			'labels'        => $labels,
+			'public' => true,
+			'menu_position' => 3,
+			'supports'      => array('title','excerpt', 'editor','thumbnail','page-attributes'),
+			'taxonomies' => array('post_tag'),
+			'has_archive' => true
+		);
+		register_post_type( 'sh', $args );
+	}
+	add_action( 'init', 'my_custom_post_sh' );
+	
 	
 	function my_taxonomies_ac_co() {
 		$labels = array(
@@ -220,6 +252,7 @@ function twentytwenty_theme_support() {
 		);
 		register_taxonomy( 'category_touzi', array('touzi'), $args );
 		register_taxonomy( 'category_scfq', array('scfq'), $args );
+		register_taxonomy( 'category_page', array('page'), $args );
 	}
 	add_action( 'init', 'my_taxonomies_ac_co');
 }
@@ -905,38 +938,35 @@ add_action('admin_init', 'ssid_add');
 
 //为WordPress页面添加标签和分类
  
-class PTCFP{
+// class PTCFP{
  
-	function __construct(){
+// 	function __construct(){
    
-	  add_action( 'init', array( $this, 'taxonomies_for_pages' ) );
+// 	  add_action( 'init', array( $this, 'taxonomies_for_pages' ) );
    
-	} // __construct
+// 	} // __construct
    
-	/**
-	 * 为“页面”添加“标签”和“分类”
-	 *
-	 * @uses register_taxonomy_for_object_type
-	 */
-	function taxonomies_for_pages() {
-		register_taxonomy_for_object_type( 'post_tag', 'page' );
-		register_taxonomy_for_object_type( 'category', 'page' );
-	} // taxonomies_for_pages
-  } // PTCFP
+// 	/**
+// 	 * 为“页面”添加“标签”和“分类”
+// 	 *
+// 	 * @uses register_taxonomy_for_object_type
+// 	 */
+// 	function taxonomies_for_pages() {
+// 		register_taxonomy_for_object_type( 'post_tag', 'page' );
+// 		register_taxonomy_for_object_type( 'category', 'page' );
+// 	} // taxonomies_for_pages
+//   } // PTCFP
    
-  $ptcfp = new PTCFP();
+//   $ptcfp = new PTCFP();
 
-//   //模板
-// add_action('template_include', 'load_single_template');
-// function load_single_template($template) {
-//     $new_template = '';
-// 	global $post;
-	
-// 	if($post->ID==3 || $post->ID=4) {
-// 		$new_template = locate_template(array('list.php' ));
-// 	}elseif($post->ID!=2) {
-// 		$new_template = locate_template(array('detail.php' ));
-// 	}
+//模板
+add_action('template_include', 'load_single_template');
+function load_single_template($template) {
+    $new_template = '';
+	global $post;
+	if( has_term('tzcj', 'category_page', $post) ) {//inverters
+		$new_template = locate_template(array('page-list_touzi.php' ));
+	}
 
-//     return ('' != $new_template) ? $new_template : $template;
-// }
+    return ('' != $new_template) ? $new_template : $template;
+}

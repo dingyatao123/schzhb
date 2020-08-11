@@ -11,8 +11,10 @@
 
 get_header();
 ?>
+<link href="<?php bloginfo('template_directory'); ?>/assets/css/liMarquee.css" rel="stylesheet">
 <link href="<?php bloginfo('template_directory'); ?>/assets/css/swiper.min.css" rel="stylesheet">
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/swiper.min.js" type='text/javascript'></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.liMarquee.js" type='text/javascript'></script>
 
 <main id="site-content" role="main">
 	<div class="wrap" id="wrap">
@@ -31,7 +33,7 @@ get_header();
 							'order'   	 => 'desc',
 							'tax_query' => array(
 								array(
-									'taxonomy' => 'category',
+									'taxonomy' => 'category_page',
 									'field' => 'slug', //can be set to ID
 									'terms' => 'rotation2',
 								)
@@ -207,7 +209,7 @@ get_header();
 							'order'   	 => 'desc',
 							'tax_query' => array(
 								array(
-									'taxonomy' => 'category',
+									'taxonomy' => 'category_page',
 									'field' => 'slug', //can be set to ID
 									'terms' => 'rotation3',
 								)
@@ -249,6 +251,63 @@ get_header();
 		</div>
 		<div class="clear"></div>
 	</div>
+	<div id="scfq">
+		<div class="container">
+			<div class="left">
+				<h2>四川风情</h2>
+				<div><?php echo mb_substr(strip_tags(get_post(39)->post_content),0,200,'utf-8'); ?></div><a href="<?php echo get_permalink(39); ?>">[详情]</a>
+			</div>
+			<div class="left">
+				<h2><?php echo get_post(200)->post_title; ?></h2>
+				<ul>
+				<?php
+					$args = array(
+						'post_type' 	 => 'scfq',
+						'orderby'   	 => 'date',
+						'order'   	 => 'desc',
+						'posts_per_page' => 7
+					);
+					$slides = new WP_Query($args);
+					$num = $slides->post_count;//总条数
+					if($num>0){
+						while ($slides->have_posts()):$slides->the_post();  ?>
+						<li>
+							<a href="<?php echo get_the_permalink() ?>">
+								<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+							</a>
+						</li>
+					<?php endwhile;} ?>
+				</ul>
+			</div>
+			<div class="left">
+				<img src="<?php bloginfo('template_directory'); ?>/assets/images/7.png" alt="">
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="container">
+		<ul class="dowebok">
+			<?php
+			if ( has_nav_menu( 'primary' ) ) {
+				wp_nav_menu(
+					array(
+						'container'  => '',
+						'items_wrap' => '%3$s',
+						'theme_location' => 'social',
+						'menu_class' => 'menuasdfasd'
+					)
+				);
+			}
+			?>
+		</ul>
+		<script>
+			$(function(){
+				$('.dowebok').liMarquee({
+					scrollamount: 50
+				});
+			});
+		</script>
+	</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
@@ -264,7 +323,7 @@ window.onload=function(){
 			'order'   	 => 'desc',
 			'tax_query' => array(
 				array(
-					'taxonomy' => 'category',
+					'taxonomy' => 'category_page',
 					'field' => 'slug', //can be set to ID
 					'terms' => 'rotation',
 				)

@@ -10,13 +10,10 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-
 ?>
 		<footer id="site-footer" role="contentinfo" class="header-footer-group">
-
-			
-			<div id="nav">
-				<div id="nav_main" class="clear">
+			<div id="nav2">
+				<div id="nav_main2" class="clear">
 					<?php if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) { ?>
 						<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
 							<ul class="primary-menu reset-list-style">
@@ -36,7 +33,9 @@
 					<?php } ?>
 				</div>
 			</div>
-
+			<div class="bottom">
+				<?php echo get_post(2)->post_content; ?>		
+			</div>
 		</footer><!-- #site-footer -->
 	</body>
 </html>
