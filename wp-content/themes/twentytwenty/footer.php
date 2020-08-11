@@ -37,5 +37,6 @@
 				<?php echo get_post(2)->post_content; ?>		
 			</div>
 		</footer><!-- #site-footer -->
+<?php wp_footer(); ?>
 	</body>
 </html>

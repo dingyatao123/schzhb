@@ -60,7 +60,7 @@ function create_initial_post_types() {
 			'rewrite'               => false,
 			'query_var'             => false,
 			'delete_with_user'      => true,
-			'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'page-attributes', 'custom-fields', 'comments', 'revisions' ),
+			'supports'              => array( 'title', 'editor','excerpt' ,'author', 'thumbnail', 'page-attributes', 'custom-fields', 'comments', 'revisions' ),
 			'show_in_rest'          => true,
 			'rest_base'             => 'pages',
 			'rest_controller_class' => 'WP_REST_Posts_Controller',
