@@ -82,6 +82,11 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 .swiper-container .swiper-pagination{text-align: right;bottom: 7px;padding-right: 4px;}
 
 #scfq{width:100%;max-width:1920px;margin: 0 auto 50px;padding: 60px 10px 100px;background: #f4f4f4 url(../images/6.png) no-repeat center top;background-size: cover;}
+#scfq .left li{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+#scfq .left li a span:first-child{color: #0268c3;}
+#scfq .left ul li:first-child{border-bottom: 1px dashed #acadad;padding-bottom: 6px;margin-bottom: 3px;}
+#scfq .left ul li:first-child span{color: #0268c3;font-size: 1.6rem;}
+#scfq .left ul li:first-child img{float: left;height: 60px;margin-right: 10px;}
 
 #touzi{width:100%;max-width:1920px;margin: 0 auto 50px;padding: 60px 10px 100px;background: #f4f4f4 url(../images/2.png) no-repeat right top;background-size: auto 100%;}
 #touzi .container ul{width: 520px;}
@@ -115,6 +120,11 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 #site-content .dowebok{background: none;}
 #site-content .dowebok li{margin: 0 20px;display: inline-block;font-size: 1.4rem;}
 #site-content .dowebok li a{position: relative;display: block;}
+#site-content>.detail.liststyle .list .postcontent>ul>li{background: none;}
+#site-content>.detail.liststyle .list .postcontent>ul>li div:first-child{float: left;width: 102px;margin-right: 20px;}
+#site-content>.detail.liststyle .list .postcontent>ul>li div:first-child img{width: 100%;height: 78px;}
+#site-content>.detail.liststyle .list .postcontent>ul>li div p{font-size: 1.2rem;}
+#site-content>.detail.liststyle .list .postcontent>ul>li div p:first-child{font-weight: bold;}
 
 #site-footer #nav2{background:url(../images/4.png) no-repeat center;}
 #site-footer #nav_main2 ul li.current-menu-item a{background: none;color: #fff;}
@@ -133,3 +143,5 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 .rc2 .label-above .nf-field-element input:hover,.rc2 .label-above .nf-field-element input:active{text-decoration: none;background: #cdcdce;color: #222;}
 .rc2 .nf-error-msg{text-align: center;}
 .rc2 .nf-form-content textarea.ninja-forms-field{height: 150px;}
+
+.scfq .rc img{max-width: 100%;margin: 0 auto 20px;}

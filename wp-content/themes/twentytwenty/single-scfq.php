@@ -2,12 +2,13 @@
 get_header();
 ?>
 <main id="site-content" role="main">
-	<div class="detail container">
+	<div class="detail container scfq">
         <div class="inside">
             <div class="postcontent">
 				<p class="t"><?php echo $post->post_title; ?></p>
 				<p class="date">发表于：<?php echo get_the_date('Y-m-d'); ?></p>
 				<div class="rc">
+				<img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt="">
 					<?php echo $post->post_content; ?>
 				</div>
             </div>

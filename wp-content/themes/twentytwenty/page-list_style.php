@@ -40,7 +40,7 @@ function _paging_link( $i, $title = '',$post_name) {
 }
 ?>
 <main id="site-content" role="main">
-	<div class="detail container">
+	<div class="detail container liststyle">
         <div class="inside list">
             <div class="postcontent">
                 <p class="t"><?php echo $post->post_title; ?></p>
@@ -55,7 +55,7 @@ function _paging_link( $i, $title = '',$post_name) {
 						);
 						$slides = new WP_Query($args);
 						while ($slides->have_posts()):$slides->the_post(); ?>
-						<li><a href="<?php echo get_the_permalink() ?>"><span><?php echo get_the_date('Y-m-d') ?></span><p><?php the_title(); ?></p></a></li>
+						<li><a href="<?php echo get_the_permalink() ?>"><div><img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt=""></div></a><div><p><a href="<?php echo get_the_permalink() ?>"><?php the_title(); ?></a><p><?php echo strip_tags(mb_substr($post->post_content, 0, 140)); ?><div></p><div class="clear"></div></li>
 					<?php endwhile; ?>
 				</ul>
 				<?php mo_paging($post_name,$pageid,$max_page); ?>

@@ -255,7 +255,7 @@ get_header();
 		<div class="container">
 			<div class="left">
 				<h2>四川风情</h2>
-				<div><?php echo mb_substr(strip_tags(get_post(39)->post_content),0,200,'utf-8'); ?></div><a href="<?php echo get_permalink(39); ?>">[详情]</a>
+				<div><?php echo mb_substr(strip_tags(get_post(39)->post_content),0,220,'utf-8'); ?></div><a href="<?php echo get_permalink(39); ?>">[详情]</a>
 			</div>
 			<div class="left">
 				<h2><?php echo get_post(200)->post_title; ?></h2>
@@ -269,14 +269,20 @@ get_header();
 					);
 					$slides = new WP_Query($args);
 					$num = $slides->post_count;//总条数
-					if($num>0){
-						while ($slides->have_posts()):$slides->the_post();  ?>
+					if($num>0){$x = 0;
+						while ($slides->have_posts()):$slides->the_post();if($x==0){  ?>
 						<li>
 							<a href="<?php echo get_the_permalink() ?>">
-								<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+							<img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt=""><span><?php echo $post->post_title; ?></span>
 							</a>
 						</li>
-					<?php endwhile;} ?>
+					<?php }else{ ?>
+						<li>
+							<a href="<?php echo get_the_permalink() ?>">
+								<span>[<?php echo $post->post_title; ?>]</span><span><?php echo strip_tags(mb_substr($post->post_content, 0, 30)); ?></span>
+							</a>
+						</li>
+					<?php }$x++;endwhile;} ?>
 				</ul>
 			</div>
 			<div class="left">
