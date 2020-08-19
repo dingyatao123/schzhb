@@ -6,7 +6,7 @@ get_header();
         <div class="inside nocategory">
             <div class="postcontent">
 				<p class="t"><?php echo $post->post_title; ?></p>
-				<p class="date">发表于：<?php echo get_the_date('Y-m-d'); ?> <?php if($post->post_excerpt)echo '来源：'.$post->post_excerpt; ?></p>
+				<p class="date"><?php echo get_the_date('Y年m月d日 H时m分'); ?> <?php if($post->post_excerpt)echo '来源：'.$post->post_excerpt; ?></p>
 				<div class="rc">
 					<?php echo $post->post_content; ?>
 				</div>
