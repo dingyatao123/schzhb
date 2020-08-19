@@ -11,10 +11,10 @@
 
 get_header();
 ?>
-<link href="<?php bloginfo('template_directory'); ?>/assets/css/liMarquee.css" rel="stylesheet">
+<!-- <link href="<?php bloginfo('template_directory'); ?>/assets/css/liMarquee.css" rel="stylesheet"> -->
 <link href="<?php bloginfo('template_directory'); ?>/assets/css/swiper.min.css" rel="stylesheet">
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/swiper.min.js" type='text/javascript'></script>
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.liMarquee.js" type='text/javascript'></script>
+<!-- <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.liMarquee.js" type='text/javascript'></script> -->
 
 <main id="site-content" role="main">
 	<div class="wrap" id="wrap">
@@ -306,13 +306,13 @@ get_header();
 			}
 			?>
 		</ul>
-		<script>
+		<!-- <script>
 			$(function(){
 				$('.dowebok').liMarquee({
 					scrollamount: 50
 				});
 			});
-		</script>
+		</script> -->
 	</div>
 </main><!-- #site-content -->
 

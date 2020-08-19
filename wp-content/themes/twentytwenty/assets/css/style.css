@@ -121,7 +121,7 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 #site-content>.detail .category p.title span{background: #fff;display: inline-block;padding: 0 10px;border-top-left-radius: 5px;border-top-right-radius: 5px;color: #0268c3;}
 #site-content>.detail .category ul li{ width:238px; height:38px; margin-left:6px; background:url(../images/5.png); text-indent:54px; line-height:45px; color:#0268c3;}
 #site-content .dowebok{background: none;}
-#site-content .dowebok li{margin: 0 20px;display: inline-block;font-size: 1.4rem;}
+#site-content .dowebok li{margin: 10px 0;width: 20%;float: left;text-align: center;font-size: 1.4rem;}
 #site-content .dowebok li a{position: relative;display: block;}
 #site-content>.detail.liststyle .list .postcontent>ul>li{background: none;}
 #site-content>.detail.liststyle .list .postcontent>ul>li div:first-child{float: left;width: 102px;margin-right: 20px;}
