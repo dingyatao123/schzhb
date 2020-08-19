@@ -1,1 +1,11 @@
 /wp-content/uploads
+
+[user]
+
+name = dingyatao123
+
+email = 992776686@qq.com
+
+[credential]
+
+helper = wincred
