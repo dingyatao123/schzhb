@@ -86,7 +86,7 @@ get_header();
 					'post_type' 	 => 'post',
 					'orderby'   	 => 'date',
 					'order'   	 => 'desc',
-					'posts_per_page' => 7
+					'posts_per_page' => 6
 				);
 				$slides = new WP_Query($args);
 				$num = $slides->post_count;//总条数
@@ -130,7 +130,7 @@ get_header();
 								'terms' => $arr[$i],
 							)
 						), 
-						'posts_per_page' => 7
+						'posts_per_page' => 6
 					);
 					$slides = new WP_Query($args);
 					$num = $slides->post_count;//总条数
@@ -163,7 +163,7 @@ get_header();
 					'post_type' 	 => 'zn',
 					'orderby'   	 => 'date',
 					'order'   	 => 'desc',
-					'posts_per_page' => 7
+					'posts_per_page' => 6
 				);
 				$slides = new WP_Query($args);
 				$num = $slides->post_count;//总条数
@@ -185,7 +185,7 @@ get_header();
 					'post_type' 	 => 'info',
 					'orderby'   	 => 'date',
 					'order'   	 => 'desc',
-					'posts_per_page' => 7
+					'posts_per_page' => 6
 				);
 				$slides = new WP_Query($args);
 				$num = $slides->post_count;//总条数
