@@ -148,3 +148,4 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 .rc2 .nf-form-content textarea.ninja-forms-field{height: 150px;}
 
 .scfq .rc img{max-width: 100%;margin: 0 auto 20px;}
+#site-content>.detail .postcontent.shares .date{padding: 5px 10px;line-height: 24px;text-align: left;background: #e7e7e7;}
