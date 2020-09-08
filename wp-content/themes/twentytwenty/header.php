@@ -23,7 +23,7 @@ $thisid = $post -> ID;
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-		<link href="<?php bloginfo('template_directory'); ?>/assets/css/style.css?1.0.1" rel="stylesheet">
+		<link href="<?php bloginfo('template_directory'); ?>/assets/css/style.css?1.0.2" rel="stylesheet">
 		<script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery-3.5.1.min.js" type='text/javascript'></script>
 
 	</head>
