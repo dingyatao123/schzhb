@@ -26,6 +26,33 @@ get_header();
 	</div>
 	<div id="hb">
 		<div class="left">
+			<h2><?php echo get_post(1)->post_title; ?> <a href="<?php echo get_permalink(1); ?>">更多>></a></h2>
+			<div><?php echo get_post(1)->post_content; ?></div><a href="<?php echo get_permalink(1); ?>">[详情]</a>
+		</div>
+		<div class="left">
+			<h2><?php echo get_post(25)->post_title; ?> <a href="<?php echo get_permalink(25); ?>">更多>></a></h2>
+			<h3>重要政务服务</h3>
+			<ul>
+			<?php
+				$args = array(
+					'post_type' 	 => 'post',
+					'orderby'   	 => 'date',
+					'order'   	 => 'desc',
+					'posts_per_page' => 5
+				);
+				$slides = new WP_Query($args);
+				$num = $slides->post_count;//总条数
+				if($num>0){
+					while ($slides->have_posts()):$slides->the_post();  ?>
+					<li>
+						<a href="<?php echo get_the_permalink() ?>">
+							<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
+						</a>
+					</li>
+				<?php endwhile;} ?>
+			</ul>
+		</div>
+		<div class="left">
 			<div class="swiper-container swiper1">
 				<div class="swiper-wrapper">
 					<?php
@@ -74,33 +101,6 @@ get_header();
 					});
 				});
 			</script>
-		</div>
-		<div class="left">
-			<h2><?php echo get_post(1)->post_title; ?> <a href="<?php echo get_permalink(1); ?>">更多>></a></h2>
-			<div><?php echo get_post(1)->post_content; ?></div><a href="<?php echo get_permalink(1); ?>">[详情]</a>
-		</div>
-		<div class="left">
-			<h2><?php echo get_post(25)->post_title; ?> <a href="<?php echo get_permalink(25); ?>">更多>></a></h2>
-			<h3>重要政务服务</h3>
-			<ul>
-			<?php
-				$args = array(
-					'post_type' 	 => 'post',
-					'orderby'   	 => 'date',
-					'order'   	 => 'desc',
-					'posts_per_page' => 6
-				);
-				$slides = new WP_Query($args);
-				$num = $slides->post_count;//总条数
-				if($num>0){
-					while ($slides->have_posts()):$slides->the_post();  ?>
-					<li>
-						<a href="<?php echo get_the_permalink() ?>">
-							<span><?php echo $post->post_title; ?></span><span>　<?php echo get_the_date('Y-m-d'); ?></span>
-						</a>
-					</li>
-				<?php endwhile;} ?>
-			</ul>
 		</div>
 		<div class="clear"></div>
 	</div>
