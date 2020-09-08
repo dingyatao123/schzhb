@@ -61,7 +61,7 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 #hb,#lw,#scfq{margin-bottom: 50px;}
 #hb .left,#lw .left,#scfq .left{width: 35%;box-sizing: border-box;float: left;}
 #hb .left:nth-child(3),#lw .left:nth-child(3),#scfq .left:nth-child(3){width: 30%;}
-#hb .left:first-child,#lw .left:first-child{padding: 0 20px 0 0;background: url(../images/1.png) no-repeat right top;background-size: 1px 100%;height: 225px;}
+#hb .left:first-child,#lw .left:first-child{padding: 0 20px 0 0;background: url(../images/1.png) no-repeat right top;background-size: 1px 100%;height: 204px;}
 #scfq .left:first-child{padding: 0 20px 0 0;}
 #scfq .left:nth-child(2){padding: 0 20px;}
 #lw .left:first-child{padding: 0 20px 0 0;height: 199px;}
