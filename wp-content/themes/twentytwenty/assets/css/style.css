@@ -101,6 +101,7 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 #touzi .container ul.list li a span:last-child{float: right;color: #808080;}
 #touzi .container ul.list li a span:first-child{white-space: nowrap;text-overflow:ellipsis;overflow:hidden;width: calc(100% - 131px);display: inline-block;}
 
+#site-content{overflow: initial;}
 #site-content>.detail .postcontent{float: left;width: 739px;box-sizing: border-box;border: 1px solid #bfbbbb;border-radius: 6px;padding: 10px 20px 50px;font-size: 1.6rem;line-height: 1.5;}
 #site-content>.detail .nocategory .postcontent{width: 100%;float: none;}
 #site-content>.detail .list .postcontent>ul>li{margin: 0;padding: 10px;border-bottom: 1px solid #ddd;}
