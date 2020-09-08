@@ -306,6 +306,7 @@ get_header();
 			}
 			?>
 		</ul>
+		<div class="clear"></div>
 		<!-- <script>
 			$(function(){
 				$('.dowebok').liMarquee({
