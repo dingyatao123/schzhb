@@ -966,6 +966,8 @@ function load_single_template($template) {
 	global $post;
 	if( has_term('tzcj', 'category_page', $post) ) {//inverters
 		$new_template = locate_template(array('page-list_touzi.php' ));
+	}elseif( has_term('rotation', 'category_page', $post) ) {//inverters
+		$new_template = locate_template(array('page-rotation.php' ));
 	}
 
     return ('' != $new_template) ? $new_template : $template;

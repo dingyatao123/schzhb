@@ -19,8 +19,10 @@ get_header();
 <main id="site-content" role="main">
 	<div class="wrap" id="wrap">
 		<ul class="content"></ul>
-		<a href="javascript:;" class="prev" style="display: none;">&lt;</a>
-		<a href="javascript:;" class="next" style="display: none;">&gt;</a>
+		<div id="jt">
+			<a href="javascript:;" class="prev" style="display: none;">&lt;</a>
+			<a href="javascript:;" class="next" style="display: none;">&gt;</a>
+		</div>
 	</div>
 	<div id="hb">
 		<div class="left">
@@ -344,7 +346,7 @@ window.onload=function(){
 			for($i=0;$i<$a;$i++){
 			while ($slides->have_posts()):$slides->the_post();  ?>
 			
-			var obj = { "path" : "<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" }
+			var obj = { "path" : "<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>","link":"<?php echo get_the_permalink() ?>" }
 			imgArr.push(obj);
 	<?php endwhile;} ?>
     var size=[
@@ -366,7 +368,8 @@ window.onload=function(){
     var imgSum=imgArr.length;
     var wrap=document.getElementById('wrap');
     var cont=wrap.firstElementChild || wrap.firstChild;
-    var btnArr=wrap.getElementsByTagName('a');
+	var jt=document.getElementById('jt');
+    var btnArr=jt.getElementsByTagName('a');
     var falg=true;
     var speed=7000;
     wrap.onmouseover=function(){
@@ -388,6 +391,8 @@ window.onload=function(){
         // lis.style.cssText='top:'+size[i].top+'px;'+'left:'+size[i].left+'px;'+'width:'+size[i].width+'px;'+'z-index:'+size[i].zIndex+';'+'height:'
         // +size[i].height+'px;'+'opacity:'+size[i].opacity+';';
         lis.style.backgroundImage='url('+imgArr[i].path+')';
+		var a = imgArr[i].link;
+		lis.innerHTML='<a href="'+a+'"></a>';
         cont.appendChild(lis);
     }
     var liArr=cont.children;
