@@ -34,6 +34,7 @@ get_header();
 						<?php endwhile; ?>
                 </ul>
             </div>
+			<div class="clear"></div>
         </div>
 	</div>
 </main><!-- #site-content -->

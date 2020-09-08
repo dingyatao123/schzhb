@@ -33,7 +33,8 @@ get_header();
 							<a href="<?php echo get_the_permalink() ?>"><li><?php echo $post->post_title; ?></li></a>
 						<?php endwhile; ?>
                 </ul>
-            </div>
+			</div>
+			<div class="clear"></div>
         </div>
 	</div>
 </main><!-- #site-content -->

@@ -17,6 +17,7 @@ get_header();
                         echo  $content;?>
                 </div>
             </div>
+			<div class="clear"></div>
         </div>
 	</div>
 </main><!-- #site-content -->

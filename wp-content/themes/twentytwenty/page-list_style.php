@@ -84,6 +84,7 @@ function _paging_link( $i, $title = '',$post_name) {
 						<?php endwhile; ?>
                 </ul>
             </div>
+			<div class="clear"></div>
         </div>
 	</div>
 </main><!-- #site-content -->
