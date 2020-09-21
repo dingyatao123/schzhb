@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{padding:0;margin:0;color:#333;background:#fff;font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;box-sizing:border-box;}
+body{padding:0;margin:0;color:#333;background:#fff;font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;box-sizing:border-box;min-width: 1200px;}
 a,area{blr:expression(this.onFocus=this.blur())}
 /* for IE */
 :focus{-moz-outline-style:none;}
@@ -49,6 +49,7 @@ a,div,p,ul,li,span{padding:0px;margin:0px;box-sizing:border-box;}
 #nav_main ul li a:hover{color: #0268c3;}
 #nav_main ul li.current-menu-item a,#nav_main ul li.current-menu-item a:hover{background:url(../images/nav_bg.png) repeat center;color:#fff;}
 ul.primary-menu {margin: -0.8rem 0 0 0;}
+.primary-menu-wrapper{display: block;width: 100%;}
 
 .wrap {position: relative;width: 1200px;height: 360px;margin: 0 auto 50px;}
 .content {position: absolute;width: 1200px;height: 360px;}
