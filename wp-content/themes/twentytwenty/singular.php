@@ -74,8 +74,10 @@ get_header();
 						if($num>0){
 							while ($slides->have_posts()):$slides->the_post();  ?>
 							<div class="swiper-slide li li<?php echo $post->ID; ?>">
-								<img width="100%" src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt="">
-								<p><?php echo $post->post_title; ?></p>
+								<a href="<?php if($post->post_excerpt){echo strip_tags($post->post_excerpt);}else{echo 'javascript: void(0);';} ?>">
+									<div style="width: 100%;padding-top: 66%;background: url(<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>) no-repeat;background-size: cover;"></div>
+									<p><?php echo $post->post_title; ?></p>
+								</a>
 							</div>
 						<?php endwhile;} ?>
 				</div>
@@ -107,7 +109,9 @@ get_header();
 	<div id="touzi">
 		<div class="container">
 			<ul class="title">
-				<li class="active">招商引资项目</li>
+				<li class="active">招才引智</li>
+				<li>投资动态</li>
+				<li>招商引资项目</li>
 				<li>园区信息</li>
 				<li>投资政策</li>
 				<li>他山之石</li>
@@ -117,10 +121,10 @@ get_header();
 				
 			</ul>
 			<script>
-				var touzi=[[],[],[],[]];
+				var touzi=[[],[],[],[],[],[]];
 				<?php
-					$arr = array('zsyz','yqxx','tzzz','tszs');
-					for($i=0;$i<3;$i++){
+					$arr = array('zcyz','tzdt','zsyz','yqxx','tzzz','tszs');
+					for($i=0;$i<6;$i++){
 					$args = array(
 						'post_type' 	 => 'touzi',
 						'orderby'   	 => 'date',
@@ -223,8 +227,10 @@ get_header();
 						if($num>0){
 							while ($slides->have_posts()):$slides->the_post();  ?>
 							<div class="swiper-slide li li<?php echo $post->ID; ?>">
-								<img width="100%" src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>" alt="">
-								<p><?php echo $post->post_title; ?></p>
+								<a href="<?php if($post->post_excerpt){echo strip_tags($post->post_excerpt);}else{echo 'javascript: void(0);';} ?>">
+									<div style="width: 100%;padding-top: 66%;background: url(<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');echo $full_image_url[0]; ?>) no-repeat;background-size: cover;"></div>
+									<p><?php echo $post->post_title; ?></p>
+								</a>
 							</div>
 						<?php endwhile;} ?>
 				</div>

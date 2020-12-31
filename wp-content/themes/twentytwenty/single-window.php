@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<main id="site-content" role="main">
+<main id="site-content" role="main" class="listwindow">
 	<div class="detail container">
         <div class="inside nocategory">
             <div class="postcontent shares">

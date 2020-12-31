@@ -93,9 +93,9 @@ ul.primary-menu {margin: -0.8rem 0 0 0;}
 #scfq .left ul li:first-child img{float: left;height: 60px;margin-right: 10px;}
 
 #touzi{width:100%;max-width:1920px;margin: 0 auto 50px;padding: 60px 10px 100px;background: #f4f4f4 url(../images/2.png) no-repeat right top;background-size: auto 100%;}
-#touzi .container ul{width: 520px;}
+#touzi .container ul{width: 780px;}
 #touzi .container ul.title{margin-bottom: 10px;font-size: 1.6rem;}
-#touzi .container ul.title li{line-height: 4rem;box-sizing: border-box;float: left;width: 25%;text-align: center;color: #666;background: url(../images/1.png) no-repeat left bottom;background-size: 100% 1px;cursor: pointer;}
+#touzi .container ul.title li{line-height: 4rem;box-sizing: border-box;float: left;width: calc(100% / 6);text-align: center;color: #666;background: url(../images/1.png) no-repeat left bottom;background-size: 100% 1px;cursor: pointer;}
 #touzi .container ul.title li.active{color: #0268c3;background: url(../images/3.png) no-repeat left top;background-size: 100% 100%;}
 #touzi .container ul.list{height: calc(21rem + 7px);list-style: disc;margin-left: 20px;}
 #touzi .container ul.list li{line-height: 3rem;border-bottom: 1px dashed #e3e3e3;}
@@ -116,6 +116,7 @@ ul.primary-menu {margin: -0.8rem 0 0 0;}
 #site-content>.detail .list .postcontent .pagination li.active span{color: #ca0b0f;}
 #site-content>.detail .postcontent .t{text-align: center;font-size: 2rem;margin-bottom: 0.5rem;}
 #site-content>.detail .postcontent .rc{text-indent: 32px;}
+#site-content.listwindow>.detail .postcontent .rc{white-space: pre-line;}
 #site-content>.detail .postcontent .rc *{line-height:2;}
 #site-content>.detail .postcontent .date{color: #666;font-size: 12px;text-align: center;margin-bottom: 1rem;}
 #site-content>.detail .list .postcontent .t{text-align: left;font-weight: bold;margin-bottom: 10px;}
