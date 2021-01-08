@@ -109,11 +109,11 @@ get_header();
 	<div id="touzi">
 		<div class="container">
 			<ul class="title">
-				<li class="active">招才引智</li>
-				<li>投资动态</li>
+				<li class="active">投资动态</li>
 				<li>招商引资项目</li>
-				<li>园区信息</li>
 				<li>投资政策</li>
+				<li>招才引智</li>
+				<li>园区信息</li>
 				<li>他山之石</li>
 				<div class="clear"></div>
 			</ul>
@@ -123,7 +123,7 @@ get_header();
 			<script>
 				var touzi=[[],[],[],[],[],[]];
 				<?php
-					$arr = array('zcyz','tzdt','zsyz','yqxx','tzzz','tszs');
+					$arr = array('tzdt','zsyz','tzzz','zcyz','yqxx','tszs');
 					for($i=0;$i<6;$i++){
 					$args = array(
 						'post_type' 	 => 'touzi',
